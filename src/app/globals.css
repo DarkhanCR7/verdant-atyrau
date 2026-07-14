@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #22261f;
+  --color-paper: #faf7f1;
+  --color-deep: #34493b;
+  --color-deep-light: #47614f;
+  --color-sage: #7a9b7e;
+  --color-sage-light: #d9e6d4;
+  --color-terracotta: #c17a5c;
+  --color-line: #e6e0d3;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-paper: var(--color-paper);
+  --color-deep: var(--color-deep);
+  --color-deep-light: var(--color-deep-light);
+  --color-sage: var(--color-sage);
+  --color-sage-light: var(--color-sage-light);
+  --color-terracotta: var(--color-terracotta);
+  --color-line: var(--color-line);
+  --font-display: "Cormorant", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .grow-in {
+    animation: grow-in 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .fade-up {
+    animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes grow-in {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.6) translateY(10px);
+    transform-origin: bottom;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.font-data {
+  font-family: var(--font-data), ui-monospace, monospace;
+}
